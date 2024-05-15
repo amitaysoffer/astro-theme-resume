@@ -8,7 +8,7 @@ import SkillLayout from '../components/SkillLayout.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 
 import { Image } from 'astro:assets'
-import astro from '../assets/about-astro.png'
+import astro from '../assets/amitay.jpg'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
@@ -28,27 +28,14 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<Image
 				src={astro}
 				alt='profile photo'
-				class='h-28 w-auto rounded-full bg-[#FFBE98] p-2'
+				class='h-40 w-auto rounded-full bg-[#FFBE98] p-1'
 				loading='eager'
 			/>
 
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>Lorem ipsum dolor</h1>
-				<a
-					href='https://github.com/srleom/astro-theme-resume.git'
-					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
-				>
-					<span class='relative flex items-center justify-center'>
-						<span
-							class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-						></span>
-						<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-					</span>
-
-					<p class='font-medium'>Get free template</p>
-				</a>
+				<h1 class='text-3xl font-bold'>Amitay Soffer</h1>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Lorem Ipsum'>
+					<Label title='Github' href='https://github.com/amitaysoffer' as='a' target='_blank'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -56,7 +43,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 							></path></svg
 						>
 					</Label>
-					<Label title='Ipsum'>
+					<Label title='London, UK'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -67,7 +54,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<Label
 						title='Connect on Linkedin'
 						as='a'
-						href='https://www.linkedin.com/in/example/'
+						href='https://www.linkedin.com/in/amitay-soffer-137304151/'
 						target='_blank'
 					>
 						<svg
@@ -87,13 +74,14 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis
-				consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum
-				odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet
-				consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+				Experienced frontend engineer, primarily working with TypeScript and ReactJS. I love
+				creating web apps and features while collaborating with others. I am passionate about
+				creating clean and performant code, with a product engineering mindset. I have a special
+				interest in design, always emphasizing UI/UX and accessibility.
 			</p>
 		</Section>
-		{
+		<!-- TODO: Add posts -->
+		<!-- {
 			allPostsByDate.length > 0 && (
 				<Section title='Posts'>
 					<ul class='flex flex-col gap-y-2'>
@@ -105,116 +93,141 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					</ul>
 				</Section>
 			)
-		}
+		} -->
 
 		<Section title='Experience'>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
+				headingHref='https://spring.co.uk'
+				heading='Spring'
+				subheading='Frontend Engineer'
 				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+						Led the project to transform our website into a fully accessible platform, ensuring
+						smooth interaction for all users
+					</li>
+					<li>
+						Led the refactoring of critical website features: website navigation and transformation
+						of our UI components into Storybook
+					</li>
+					<li>
+						Took a pivotal role in transitioning our website from using React, Redux, and Material
+						UI to server-side rendering technology (Remix) and Tailwind.
+					</li>
+					<li>
+						Conducted interviews and mentored junior developers to instill confidence in our code
+						base
 					</li>
 				</ul>
 			</Card>
+
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
+				headingHref='https://amplience.com/'
+				heading='Amplience'
+				subheading='Junior Frontend Engineer'
+				date='Sep 2021 - Feb 2024'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+						Used React and material ui to build and enhance user interfaces on Headless CMS Platform
+					</li>
+					<li>
+						Thrived in an Agile development environment, actively participating in sprint planning,
+						stand-ups, and retrospectives, contributing to the team's iterative and efficient
+						development process.
+					</li>
+					<li>Wrote tests using React Testing Library</li>
+				</ul>
+			</Card>
+			<Card
+				heading='Memrise'
+				headingHref='https://memrise.com'
+				subheading='Web Developer - Contract'
+				date='Sep 2021 - Feb 2024'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>Worked as a contractor for an e-learning languages app.</li>
+					<li>Created and helped designing multiple web pages for memrise.com.</li>
+					<li>
+						Focused on HubSpot development, where as part of a team I worked with HTML, CSS and
+						JavaScript to form dynamic and animated web pages
+					</li>
+				</ul>
+			</Card>
 		</Section>
 
 		<Section title='Education'>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
+				heading='Elevation'
+				headingHref='https://elevation.ac/'
+				subheading='Computer Software Engineering Bootcamp'
+				date='2017'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-					</li>
+					<li>The Elevation program is a rigorous, hands-on 3 months intensive program.</li>
 				</ul>
 			</Card>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
+				heading='Tel Aviv University'
+				headingHref='https://english.tau.ac.il/'
+				subheading="Bachelor's degree Behavioural Sciences"
+				date='2013-2016'
 			/>
 		</Section>
 
 		<Section title='Projects'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
-					href='https://www.google.com'
-					heading='Consectetur'
-					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-					imagePath='/src/assets/coming-soon.png'
+					href='https://github.com/amitaysoffer/fantazy-stocks-app'
+					heading='Fantasy Stock Trading App'
+					subheading='The app allows users to interact with the stock market and play with fake money to gain experience'
+					imagePath='/src/assets/stocks.png'
 					altText='Example'
 					class='w-full sm:w-1/2'
+					skills={[
+						'javascript',
+						'react',
+						'node',
+						'express',
+						'SQL database',
+						'bootstrap',
+						'chartjs'
+					]}
 				/>
 				<ProjectCard
-					as='div'
-					heading='Coming soon...'
-					subheading=''
-					imagePath='/src/assets/coming-soon.png'
-					altText='Lorem, ipsum dolor sit'
+					href='https://github.com/amitaysoffer/snake-game'
+					heading='Snake Game'
+					subheading='A new version of the classic Snake game with cool new features, sounds and LS setup'
+					imagePath='/src/assets/snake.png'
+					altText='Example'
 					class='w-full sm:w-1/2'
+					skills={['javascript', 'CSS', 'HTML']}
 				/>
 			</div>
 		</Section>
 
-		<Section title='Certifications'>
-			<Card
-				as='a'
-				heading='Lorem ipsum, dolor sit amet consectetur adipisicing.'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta magni consequuntur corrupti.'
-				date='Mar 2024 - Mar 2024'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
-			/>
-			<Card
-				as='a'
-				heading='Lorem ipsum, dolor sit amet'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta.'
-				date='Mar 2029 - Mar 2032'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
-			/>
-		</Section>
-
 		<Section title='Skills'>
-			<SkillLayout title='Languages' skills={languages} />
-			<SkillLayout title='Frontend' skills={frontend} />
-			<SkillLayout title='Backend' skills={backend} />
-			<SkillLayout title='Others' skills={others} />
+			<SkillLayout title='Languages' skills={['English', 'Hebrew', 'French']} />
+			<SkillLayout
+				title='Frontend'
+				skills={[
+					'Javascript',
+					'React',
+					'Typescript',
+					'Remix',
+					'Tailwind',
+					'Redux',
+					'Prisma',
+					'Jest',
+					'RTL'
+				]}
+			/>
+			<SkillLayout title='Backend' skills={['Nodejs', 'Express', 'Supabase']} />
+			<SkillLayout title='Others' skills={['AWS', 'Github', 'Figma']} />
 		</Section>
 	</div>
-	<a
+	<!-- <a
 		href='https://github.com/srleom/astro-theme-resume.git'
 		class='mt-16 flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
 	>
@@ -226,5 +239,5 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		</span>
 
 		<p class='font-medium'>Get free template</p>
-	</a>
+	</a> -->
 </PageLayout>

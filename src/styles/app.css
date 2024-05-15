@@ -70,3 +70,11 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+#dev-toolbar-root {
+	display: none;
+}
+
+#dev-toolbar-root {
+	display: none;
+}
